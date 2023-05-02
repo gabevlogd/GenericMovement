@@ -118,18 +118,37 @@ public class MovementSetter : MonoBehaviour
 
     [Tooltip("can the player rotate on the x-axis?")]
     [SerializeField]
-    private bool m_Pitch;
-    public static bool Pitch { get => m_current.m_Pitch; }
+    private bool m_pitch;
+    public static bool Pitch { get => m_current.m_pitch; }
+
+    [Tooltip("is pitch rotation performed by mouse input?")]
+    [SerializeField]
+    private bool m_pitchHasMouseInput;
+    public static bool MouseInputPitch { get => m_current.m_pitchHasMouseInput; }
+
+    [Space(5f)]
 
     [Tooltip("can the player rotate on the y-axis?")]
     [SerializeField]
-    private bool m_Yaw;
-    public static bool Yaw { get => m_current.m_Yaw; }
+    private bool m_yaw;
+    public static bool Yaw { get => m_current.m_yaw; }
+
+    [Tooltip("is yaw rotation performed by mouse input?")]
+    [SerializeField]
+    private bool m_yawHasMouseInput;
+    public static bool MouseInputYaw { get => m_current.m_yawHasMouseInput; }
+
+    [Space(5f)]
 
     [Tooltip("can the player rotate on the z-axis?")]
     [SerializeField]
-    private bool m_Roll;
-    public static bool Roll { get => m_current.m_Roll; }
+    private bool m_roll;
+    public static bool Roll { get => m_current.m_roll; }
+
+    [Tooltip("is roll rotation performed by mouse input?")]
+    [SerializeField]
+    private bool m_rollHasMouseInput;
+    public static bool MouseInputRoll { get => m_current.m_rollHasMouseInput; }
 
     [Space(10f)]
 
@@ -186,6 +205,20 @@ public class MovementSetter : MonoBehaviour
     [SerializeField]
     private float m_angularDecelerationZ = 0;
     public static float AngularDecelerationZ { get => m_current.m_angularDecelerationZ; }
+
+    [Space(10f)]
+
+    [SerializeField]
+    private float m_yawSensibility = 0;
+    public static float YawSensibility { get => m_current.m_yawSensibility; }
+
+    [SerializeField]
+    private float m_pitchSensibility = 0;
+    public static float PitchSensibility { get => m_current.m_pitchSensibility; }
+
+    [SerializeField]
+    private float m_rollSensibility = 0;
+    public static float RollSensibility { get => m_current.m_rollSensibility; }
 
     #endregion
 

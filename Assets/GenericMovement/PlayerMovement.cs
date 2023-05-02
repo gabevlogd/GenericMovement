@@ -16,11 +16,8 @@ public class PlayerMovement : MonoBehaviour
     private void OnEnable() => EnableMovement();
     private void OnDisable() => DisableMovement();
 
-    private void FixedUpdate()
-    {
-        m_onTranslate?.Invoke();
-        m_onRotate?.Invoke();
-    }
+    private void Update() => m_onRotate?.Invoke();
+    private void FixedUpdate() => m_onTranslate?.Invoke();
 
     private void EnableMovement()
     {
@@ -103,8 +100,6 @@ public class PlayerMovement : MonoBehaviour
         Vector3 velocity = new Vector3(data.SpeedX, data.SpeedY, data.SpeedZ);
         m_rigidbody.velocity = velocity;
     }
-
-
 
 
     //     etc...
